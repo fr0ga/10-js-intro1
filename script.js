@@ -1,8 +1,7 @@
     console.log("Hello JS!");
 
 let a;
-console.log(a);
-a=7;
+// asdasdasd
 console.log(a);
 const d = 'bye';
 console.log(d);
