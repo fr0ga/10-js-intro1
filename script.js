@@ -87,7 +87,15 @@ let y = 3
 res = add(x,y);
     console.log(`res = ${res}`)
 
+res = multiple(x,y);
+    console.log(`res = ${res}`)
+
 function add(a,b) {
     let res = a + b;
     return res;
+}
+
+function multiple(a,b) {
+        let res = a * b;
+        return res;
 }
