@@ -118,28 +118,27 @@ function  testIsLucky(a)
 
 function isLucky(a) {
 
-    let isCheckSum = false;
     res = false;
 
     let sum1 = 0;
     let sum2 = 0;
     let stageOdd = true;
 
-    while (a > 0) {
-        if (stageOdd) {
-            sum1 += a % 10;
-            stageOdd = false;
-        } else {
-            sum2 += a % 10;
-            stageOdd = true;
+    if (a > 0) {
+        while (a > 0) {
+            if (stageOdd) {
+                sum1 += a % 10;
+                stageOdd = false;
+            } else {
+                sum2 += a % 10;
+                stageOdd = true;
+            }
+            a = (a - (a % 10)) / 10;
         }
-        a = (a - (a % 10)) / 10;
-
-        isCheckSum = true;
-    }
-    //console.log(`sum1 = ${sum1}; sum2 = ${sum2}`);
-    if (isCheckSum && sum1 === sum2) {
-        res = true;
+        //console.log(`sum1 = ${sum1}; sum2 = ${sum2}`);
+        if (sum1 === sum2) {
+            res = true;
+        }
     }
 
     return res;
