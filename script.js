@@ -90,6 +90,16 @@ res = add(x,y);
 res = multiple(x,y);
     console.log(`res = ${res}`)
 
+console.log("===== is Lucky number ??? =====");
+
+    testIsLucky(0);
+    testIsLucky(1);
+    testIsLucky(2);
+    testIsLucky(22);
+    testIsLucky(23);
+    testIsLucky(132);
+    testIsLucky(1243);
+
 function add(a,b) {
     let res = a + b;
     return res;
@@ -98,4 +108,39 @@ function add(a,b) {
 function multiple(a,b) {
         let res = a * b;
         return res;
+}
+
+function  testIsLucky(a)
+{
+    console.log(`isLucky = ${a}? Answer = ${isLucky(a)}`);
+}
+
+
+function isLucky(a) {
+
+    let isCheckSum = false;
+    res = false;
+
+    let sum1 = 0;
+    let sum2 = 0;
+    let stageOdd = true;
+
+    while (a > 0) {
+        if (stageOdd) {
+            sum1 += a % 10;
+            stageOdd = false;
+        } else {
+            sum2 += a % 10;
+            stageOdd = true;
+        }
+        a = (a - (a % 10)) / 10;
+
+        isCheckSum = true;
+    }
+    //console.log(`sum1 = ${sum1}; sum2 = ${sum2}`);
+    if (isCheckSum && sum1 === sum2) {
+        res = true;
+    }
+
+    return res;
 }
